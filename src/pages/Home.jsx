@@ -1,4 +1,5 @@
 import AboutMeSection from "../components/AboutMeSection";
+import ContactSection from "../components/ContactSection";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
 import ProjectsSection from "../components/ProjectsSection";
@@ -20,6 +21,7 @@ export default function Home() {
         <AboutMeSection />
         <SkillsSection />
         <ProjectsSection />
+        <ContactSection />
       </main>
     </div>
   );
