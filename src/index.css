@@ -13,6 +13,8 @@
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
 
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
@@ -79,6 +81,8 @@
     --primary: 250 47% 60%;
     --primary-foreground: 210 40% 98%;
 
+    --muted-foreground: 215 16% 47%;
+
     --border: 214 32% 91%;
   }
 
@@ -90,6 +94,8 @@
 
     --primary: 250 65% 65%;
     --primary-foreground: 213 31% 91%;
+
+    --muted-foreground: 215 20% 65%;
 
     --border: 217 33% 20%;
   }
@@ -173,6 +179,10 @@
 
 @utility text-secondary-foreground {
   color: hsl(var(--secondary-foreground));
+}
+
+@utility text-muted-foreground {
+  color: hsl(var(--muted-foreground));
 }
 
 #root {
