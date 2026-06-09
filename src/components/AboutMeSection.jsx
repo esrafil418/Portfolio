@@ -1,7 +1,7 @@
 import { Briefcase, Code, User } from "lucide-react";
 import { cn } from "../lib/utils";
 
-export default function AboutMe() {
+export default function AboutMeSection() {
   return (
     <section id="about" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
