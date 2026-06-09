@@ -1,6 +1,6 @@
 import { Mail, MapPin, MessagesSquare, Send } from "lucide-react";
 import { cn } from "../lib/utils";
-import { useToast } from "./ui/toast";
+import { useToast } from "./ui/Toast";
 import { useState } from "react";
 
 export default function ContactSection() {
