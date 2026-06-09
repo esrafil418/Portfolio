@@ -149,7 +149,7 @@
 
 @utility gradient-border {
   @apply relative rounded-md;
-  border: 2px solid transparent;
+  border: 0px solid transparent;
   background: hsl(var(--card));
   background-clip: padding-box;
   border-image: linear-gradient(to right, #8b5cf6, #a78bfa, #c4b5fd);
