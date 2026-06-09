@@ -10,6 +10,9 @@
 
   --color-card: hsl(var(--card));
 
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
@@ -141,15 +144,8 @@
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
 
-/* @utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  border: 1px solid transparent;
-} */
-
 @utility gradient-border {
   @apply relative rounded-md;
-  border: 0px solid transparent;
   background: hsl(var(--card));
   background-clip: padding-box;
   border-image: linear-gradient(to right, #8b5cf6, #a78bfa, #c4b5fd);
@@ -169,6 +165,14 @@
 @utility meteor {
   @apply absolute rounded-full bg-linear-to-r from-white via-white to-transparent;
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+}
+
+@utility bg-secondary {
+  background-color: hsl(var(--secondary));
+}
+
+@utility text-secondary-foreground {
+  color: hsl(var(--secondary-foreground));
 }
 
 #root {
