@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import { ToastProvider } from "./components/ui/toast";
+import { ToastProvider } from "./components/ui/Toast";
 
 export default function App() {
   return (
