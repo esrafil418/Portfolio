@@ -1,5 +1,6 @@
 import AboutMeSection from "../components/AboutMeSection";
 import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
 import ProjectsSection from "../components/ProjectsSection";
@@ -10,12 +11,14 @@ import ThemeToggle from "../components/ThemeToggle";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Header  */}
       <ThemeToggle />
 
       <StarBackground />
 
       <Navbar />
 
+      {/* Main  */}
       <main>
         <HeroSection />
         <AboutMeSection />
@@ -23,6 +26,9 @@ export default function Home() {
         <ProjectsSection />
         <ContactSection />
       </main>
+
+      {/* Footer  */}
+      <Footer />
     </div>
   );
 }
