@@ -9,26 +9,26 @@ import StarBackground from "../components/StarBackground";
 import ThemeToggle from "../components/ThemeToggle";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Header  */}
-      <ThemeToggle />
+	return (
+		<div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+			{/* Header  */}
+			<ThemeToggle />
 
-      <StarBackground />
+			<StarBackground />
 
-      <Navbar />
+			<Navbar />
 
-      {/* Main  */}
-      <main>
-        <HeroSection />
-        <AboutMeSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
-      </main>
+			{/* Main  */}
+			<main>
+				<HeroSection />
+				<AboutMeSection />
+				<SkillsSection />
+				<ProjectsSection />
+				<ContactSection />
+			</main>
 
-      {/* Footer  */}
-      <Footer />
-    </div>
-  );
+			{/* Footer  */}
+			<Footer />
+		</div>
+	);
 }
