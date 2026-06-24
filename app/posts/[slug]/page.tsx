@@ -5,8 +5,8 @@ import { formatDate } from "@/lib/utils";
 import MDXContent from "@/components/mdx-content";
 import { getPosts, getPostBySlug } from "@/lib/posts";
 import { notFound } from "next/navigation";
-import NewsletterForm from "@/components/newsletter-form";
 import { ArrowLeftIcon } from "lucide-react";
+import NewsletterForm from "@/components/newsletter-form";
 
 export async function generateStaticParams() {
 	const posts = await getPosts();
