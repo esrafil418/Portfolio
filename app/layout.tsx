@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display, Geist } from "next/font/google";
+
+import { cn } from "@/lib/utils";
+
 import "./globals.css";
 import Providers from "@/components/providers";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const playfair = Playfair_Display({
 	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
+	variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -25,11 +26,22 @@ export default function RootLayout({
 }>) {
 	return (
 		<html
-			lang="en" suppressHydrationWarning
-			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+			lang="en"
+			suppressHydrationWarning
+			className={cn("font-sans", geist.variable)}
 		>
-			<body className="min-h-full flex flex-col">
-				<Providers>{children}</Providers>
+			<body
+				className={cn(
+					"flex min-h-screen flex-col items-center justify-center font-sans antialiased",
+					geist.variable,
+					playfair.variable,
+				)}
+			>
+				<Providers>
+					<Header />
+					<main className="grow">{children}</main>
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	);
