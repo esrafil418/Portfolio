@@ -4,8 +4,8 @@ import Image from "next/image";
 import { formatDate } from "@/lib/utils";
 import MDXContent from "@/components/mdx-content";
 import { getPosts, getPostBySlug } from "@/lib/posts";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { notFound } from "next/navigation";
-import { ArrowLeftIcon } from "lucide-react";
 import NewsletterForm from "@/components/newsletter-form";
 
 export async function generateStaticParams() {
