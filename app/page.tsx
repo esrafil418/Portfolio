@@ -1,9 +1,19 @@
-export default function page() {
-	return (
-		<section className="py-24">
-			<div className="container">
-				<h1 className="text-3xl font-bold">Portfolio</h1>
-			</div>
-		</section>
-	);
+import Intro from '@/components/intro'
+import NewsletterForm from '@/components/newsletter-form'
+import RecentPosts from '@/components/recent-posts'
+import RecentProjects from '@/components/recent-projects'
+
+export default function Home() {
+  return (
+    <section className='pb-24 pt-40'>
+      <div className='container max-w-3xl'>
+        <Intro />
+
+        <RecentPosts />
+        <RecentProjects />
+
+        <NewsletterForm />
+      </div>
+    </section>
+  )
 }
