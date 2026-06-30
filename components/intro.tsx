@@ -1,5 +1,5 @@
 import Image from "next/image";
-import authorImage from "@/public/images/authors/Ghost of Tsushima_20251215115123.jpg";
+import authorImage from "@/public/images/authors/1.jpg";
 
 export default function Intro() {
 	return (
