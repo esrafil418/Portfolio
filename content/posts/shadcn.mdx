@@ -1,0 +1,95 @@
+---
+title: How to Use Shadcn ui in a Next.js App ?
+summary: Shadcn UI is a collection of beautiful, accessible components. But it's different from other UI libraries
+image: /images/posts/shadcn.webp
+author: 'Esrafil'
+publishedAt: '2026-07-09'
+---
+
+# What is Shadcn UI?
+
+## Explanation
+Shadcn UI is a collection of beautiful, accessible components. But it's different from other UI libraries:
+
+- **Not a dependency** - You copy the code directly into your project
+- **You own the code** - You can modify anything
+- **Built on Radix UI** - Accessible components
+- **Styled with Tailwind CSS** - Uses your Tailwind config
+
+---
+
+## How to Install Shadcn UI
+Run this command in your terminal:
+
+```
+npx shadcn@latest init
+```
+- select base(recommended)
+
+---
+
+## After initialization, it creates:
+- **components.json** - Configuration file
+- **lib/utils.ts** - Helper functions
+- Updates your **globals.css**
+
+### How to Use It ? 
+Search in shadcn document to find components to use in your project.
+For example if you want to use **button** component:
+Write in your Terminal:
+```
+npx shadcn@latest add button
+```
+This adds the Button component to **components/ui/button.tsx**
+
+You can also Add more components:
+```
+npx shadcn@latest add card
+npx shadcn@latest add input
+npx shadcn@latest add dialog
+npx shadcn@latest add navbar
+```
+---
+
+## How to Use a Component
+### In your component:
+
+Import it:
+```
+import { Button } from "@/components/ui/button"
+```
+
+And then use it like this:
+```
+return (
+    <Button>Click me</Button>
+    // or with variants
+    <Button variant="outline">Outline Button</Button>
+    <Button variant="destructive">Delete</Button>
+  )
+  ```
+
+- Example with Card:
+```
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+<Card>
+  <CardHeader>
+    <CardTitle>My Title</CardTitle>
+    <CardDescription>My description</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Main content here</p>
+  </CardContent>
+  <CardFooter>
+    <p>Footer</p>
+  </CardFooter>
+</Card>
+```

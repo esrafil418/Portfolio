@@ -1,0 +1,152 @@
+---
+title: How to Use Axios in a Next.js App ?
+summary: axios is a simple HTTP client for the browser and Node.js
+image: /images/posts/axios.png
+author: 'Esrafil'
+publishedAt: '2026-06-03'
+---
+
+# What is Axios?
+
+## Explanation
+Axios is a tool that helps your app talk to other websites. It sends and receives data from APIs (like a waiter who takes your order and brings your food).
+
+You can use Axios to:
+
+- GET data (read information)
+- POST data (send new information)
+- PUT data (update information)
+- DELETE data (remove information)
+
+Axios is popular because it is easy to use and works on both the server and the browser.
+
+---
+
+## How to Install
+Run this command in your terminal:
+
+```
+npm install axios
+```
+
+---
+
+## Basic Setup
+Create a folder **lib/axios.ts**
+```
+import axios from 'axios';
+// Create an axios instance with base URL
+const api = axios.create({
+  baseURL: 'https://dummyjson.com',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+export default api;
+```
+
+### Tip: Instead of writing the URL directly, you can use an environment variable. 
+Create a **.env.local** file:
+```
+NEXT_PUBLIC_API_URL=https://dummyjson.com
+```
+Then change your code to:
+```
+baseURL: process.env.NEXT_PUBLIC_API_URL,
+```
+This keeps your URL safe and easy to change.
+
+---
+
+## Using Axios to Fetch Data
+### In your component:
+
+Import it:
+```
+import api from '@/lib/axios';
+```
+
+And then use it like this:
+```
+useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await api.get('/products');
+        setProducts(response.data.products);
+      } catch (error) {
+        console.error('Error:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProducts();
+  }, []);
+  ```
+
+- Show loading message:
+```
+if (loading) return <div>Loading...</div>;
+```
+
+- Show error message:
+```
+if (error) return <div>{error}</div>;
+```
+
+---
+
+### In your return: Show products
+
+```
+  return (
+    <div>
+      {products.map((product) => (
+        <div key={product.id}>
+          <h3>{product.title}</h3>
+          <p>${product.price}</p>
+        </div>
+      ))}
+    </div>
+  );
+  ```
+
+---
+
+### Axios vs Fetch
+- Axios: **response.data** (automatic JSON parsing)
+- Fetch: **response.json()** (need to parse manually)
+
+---
+
+## Using Axios on the Server (App Router)
+If you are using Next.js 13+ with the App Router, you can fetch data on the server like this:
+
+```
+import api from '@/lib/axios';
+async function getProducts() {
+  try {
+    const response = await api.get('/products');
+    return response.data.products;
+  } catch (error) {
+    console.error('Error:', error);
+    return [];
+  }
+}
+export default async function ProductsPage() {
+  const products = await getProducts();
+  return (
+    <div>
+      {products.map((product) => (
+        <div key={product.id}>
+          <h3>{product.title}</h3>
+          <p>${product.price}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+- Always use try/catch to handle errors.
+- Use environment variables to keep your API URL safe.
